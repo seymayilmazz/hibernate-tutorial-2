@@ -21,7 +21,11 @@ public class Person {
     private int age;
 
     @Column(name="birthday")
+    @Temporal(TemporalType.DATE)
     private Date birthdayDate;
+
+    @Lob
+    private String address;
 
     public Person() {
     }
@@ -56,6 +60,14 @@ public class Person {
 
     public void setBirthdayDate(Date birthdayDate) {
         this.birthdayDate = birthdayDate;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
 }
